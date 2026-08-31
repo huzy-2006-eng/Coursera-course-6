@@ -55,4 +55,62 @@ IDS and IPS tools-
 4. Sagan
 5. Suricata
 
+# SIEM process:
+1. #### Collect and aggregate data-
+SIEM tools require data for them to be effectively used. During the first step, the SIEM collects event data from various sources like firewalls, servers, routers, and more. This data, also known as logs, contains event details like timestamps, IP addresses, and more.
 
+ Logs are a record of events that occur within an organization’s systems. After all of this log data is collected, it gets aggregated in one location. Aggregation refers to the process of consolidating log data into a centralized place. 
+
+ Through collection and aggregation, SIEM tools eliminate the need for manually reviewing and analyzing event data by accessing individual data sources. Instead, all event data is accessible in one location—the SIEM. 
+
+Parsing can occur during the first step of the SIEM process when data is collected and aggregated. Parsing maps data according to their fields and their corresponding values. For example, the following log example contains fields with values. At first, it might be difficult to interpret information from this log based on its format:
+
+April 3 11:01:21 server sshd[1088]: Failed password for user nuhara from 218.124.14.105 port 5023
+
+In a parsed format, the fields and values are extracted and paired making them easier to read and interpret:
+
+host = server
+
+process = sshd
+
+source_user = nuhara
+
+source ip = 218.124.14.105
+
+source port = 5023
+
+2. #### Normalize data-
+SIEM tools collect data from many different sources. This data must be transformed into a single format so that it can be easily processed by the SIEM. However, each data source is different and data can be formatted in many different ways. For example, a firewall log can be formatted differently than a server log.
+
+A SIEM solution ingests raw data and normalizes it into structured data.
+Collected event data should go through the process of normalization. Normalization converts data into a standard, structured format that is easily searchable. 
+
+
+3. #### Analyze data-
+After log data has been collected, aggregated, and normalized, the SIEM must do something useful with all of the data to enable security teams to investigate threats. During this final step in the process, SIEM tools analyze the data. Analysis can be done with some type of detection logic such as a set of rules and conditions. SIEM tools then apply these rules to the data, and if any of the log activity matches a rule, alerts are sent out to cybersecurity teams.
+
+#### SIEM TOOLS-
+AlienVault® OSSIM™
+
+Chronicle
+
+Elastic
+
+Exabeam
+
+IBM QRadar® Security Intelligence Platform
+
+LogRhythm
+
+Splunk
+
+
+#### Security Orchestration, automation, and response(SOAR):
+A collection of applications, tools and workflows that uses automation to respond to security events.
+
+# Advantages of SIEM tools:
+1. **Access to event data:** SIEM tools provide access to the event and activity data that happens on a network, including real-time activity. Networks can be connected to hundreds of different systems and devices. SIEM tools have the ability to ingest all of this data so that it can be accessed.
+
+2. **Monitoring,detecting and alerting:** SIEM tools continuously monitor systems and networks in real-time. They then analyze the collected data using detection rules to detect malicious activity. If an activity matches the rule, an alert is generated and sent out for security teams to assess.
+
+3. **Log storage:** SIEM tools can act as a system for data retention, which can provide access to historical data. Data can be kept or deleted after a period depending on an organization's requirements.
